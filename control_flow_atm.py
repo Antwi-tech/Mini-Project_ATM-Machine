@@ -37,3 +37,33 @@ def authenticate_user(user_pin):
             exit()
 
 authenticate_user(user_pin)
+
+
+def main_menu():
+    while True:
+
+        print(
+        'Main Menu Options:\n'
+        '1. Check Balance\n'
+        '2. Deposit Funds\n'
+        '3. Withdraw Funds\n'
+        '4. Change PIN\n'
+        '5. Exit'
+    )
+        user_choice = input('Enter number associated with choice: ')
+
+        if user_choice == '1':
+            print('Check balance function goes here!')
+        elif user_choice == '2':
+            print('Deposit Funds function goes here!')
+        elif user_choice == '3':
+            print('Withdraw Funds function goes here!')
+        elif user_choice == '4':
+            print('Change PIN function goes here!')
+        elif user_choice == '5':
+            print('Exiting main menu')
+            break
+        else:
+            print('Invalid choice!')
+
+main_menu()
