@@ -1,8 +1,15 @@
 # Function to save user pin
 def save_pin():
     global pin
-    pin = input('Add a pin: ')
-    print('Pin saved successfully')
+    while True:
+        pin = input('Add a 4-digit pin: ')
+
+        if pin.isdigit() and len(pin) == 4:
+            print('Pin saved successfully')
+            break
+        else:
+            print('Please enter a 4-digit pin.')
+            
 save_pin()
 
 
