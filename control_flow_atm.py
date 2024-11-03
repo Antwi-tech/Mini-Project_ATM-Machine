@@ -1,5 +1,6 @@
 
 # Function to save user pin
+#global pin
 def save_pin():
     global pin
     while True:
@@ -14,7 +15,36 @@ def save_pin():
 save_pin()
 
 
-# User authentication
+# Function to change user pin
+def change_pin():
+    while True:
+        user_pin = input('Enter your current pin: ')
+
+        global pin
+
+        if user_pin == pin:
+            print('You are about to change your PIN')
+        else:
+            print('Wrong PIN')
+        
+        new_pin = input('Enter a new 4-digit pin: ')
+        confirm_pin = input('Enter new PIN again: ')
+
+        if confirm_pin == new_pin:
+
+            if new_pin.isdigit() and len(new_pin) == 4:
+                pin = new_pin
+                print('Pin updated successfully!')
+                break
+            else:
+                print('Please enter a 4-digit pin.')
+        else:
+            print('This does not match up with the PIN you just entered')
+
+
+
+
+# User authentication function
 user_pin = ''
 def authenticate_user(user_pin):
     max_attempts = 3
@@ -39,6 +69,7 @@ def authenticate_user(user_pin):
 authenticate_user(user_pin)
 
 
+# Main Menu Function
 def main_menu():
     while True:
 
@@ -59,7 +90,7 @@ def main_menu():
         elif user_choice == '3':
             print('Withdraw Funds function goes here!')
         elif user_choice == '4':
-            print('Change PIN function goes here!')
+            change_pin()
         elif user_choice == '5':
             print('Exiting main menu')
             break
@@ -67,3 +98,8 @@ def main_menu():
             print('Invalid choice!')
 
 main_menu()
+
+
+# Main Application simulation
+def main():
+    pass
