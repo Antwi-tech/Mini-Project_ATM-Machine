@@ -1,8 +1,5 @@
 # Function to save user pin
 #global pin
-
-
-
 def save_pin():
     global pin
     while True:
@@ -18,12 +15,12 @@ def save_pin():
 # Function to change user pin
 def change_pin():
     while True:
-        user_pin = input('\nEnter your current pin: ')
+        user_pin = input('Enter your current pin: ')
 
         global pin
 
         if user_pin == pin:
-            print('\nYou are about to change your PIN')
+            print('You are about to change your PIN')
         else:
             print('Wrong PIN')
         
@@ -34,7 +31,7 @@ def change_pin():
 
             if new_pin.isdigit() and len(new_pin) == 4:
                 pin = new_pin
-                print('Pin updated successfully!\n')
+                print('Pin updated successfully!')
                 break
             else:
                 print('Please enter a 4-digit pin.')
@@ -53,7 +50,7 @@ def authenticate_user(user_pin):
         user_pin = input('Enter your pin: ')
 
         if user_pin == pin:
-            print('Authentication successful!\n')
+            print('Authentication successful!')
             break
         else:
             attempts += 1
@@ -78,7 +75,7 @@ def check_balance():
 def deposit_funds():
     global depositors_balance
 
-    print(f'Your account is ${depositors_balance:.2f} Please make a deposit to continue\n')
+    print(f'Your account is ${depositors_balance:.2f}\n')
     amount = float(input('Enter an amount to deposit: '))
     
     if amount > 0:
@@ -94,21 +91,19 @@ def deposit_funds():
 withdraw: float    
 def withdraw_funds():
     global depositors_balance
-    withdraw = float(input('Enter withdrawal amount: ')) 
-    if depositors_balance == 0:
-        deposit_funds()   
-    elif withdraw > depositors_balance:
+    withdraw = float(input('Enter withdrawal amount: '))
+    
+    if withdraw > depositors_balance:
         print('Insufficient Balance')
         withdraw_funds()
     elif withdraw <= 0:
         print('Enter a non-negative amout to withdraw') 
         withdraw_funds()  
-          
     else:
         print('Enter your pin to proceed')
         authenticate_user(user_pin)
         depositors_balance -= withdraw
-        print(f'An amount of ${withdraw:.2f} withdrawn successfullly\nCurrent balace is: ${depositors_balance:.2f}\n')  
+        print(f'An amount of ${withdraw:.2f} withdrawn successfullly\nCurrent balace is: ${depositors_balance:.2f}')  
         
         
         
@@ -153,5 +148,3 @@ def main():
     print('Enter your new pin to proceed to the main menu.')
     authenticate_user(user_pin)
     main_menu()
-    
-main()    
