@@ -1,5 +1,8 @@
 # Function to save user pin
 #global pin
+
+
+
 def save_pin():
     global pin
     while True:
@@ -50,7 +53,7 @@ def authenticate_user(user_pin):
         user_pin = input('Enter your pin: ')
 
         if user_pin == pin:
-            print('Authentication successful!')
+            print('Authentication successful!\n')
             break
         else:
             attempts += 1
@@ -103,7 +106,7 @@ def withdraw_funds():
         print('Enter your pin to proceed')
         authenticate_user(user_pin)
         depositors_balance -= withdraw
-        print(f'An amount of ${withdraw:.2f} withdrawn successfullly\nCurrent balace is: ${depositors_balance:.2f}')  
+        print(f'An amount of ${withdraw:.2f} withdrawn successfullly\nCurrent balace is: ${depositors_balance:.2f}\n')  
         
         
         
@@ -148,3 +151,5 @@ def main():
     print('Enter your new pin to proceed to the main menu.')
     authenticate_user(user_pin)
     main_menu()
+    
+main()    
