@@ -18,12 +18,12 @@ def save_pin():
 # Function to change user pin
 def change_pin():
     while True:
-        user_pin = input('Enter your current pin: ')
+        user_pin = input('\nEnter your current pin: ')
 
         global pin
 
         if user_pin == pin:
-            print('You are about to change your PIN')
+            print('\nYou are about to change your PIN')
         else:
             print('Wrong PIN')
         
@@ -34,7 +34,7 @@ def change_pin():
 
             if new_pin.isdigit() and len(new_pin) == 4:
                 pin = new_pin
-                print('Pin updated successfully!')
+                print('Pin updated successfully!\n')
                 break
             else:
                 print('Please enter a 4-digit pin.')
@@ -78,7 +78,7 @@ def check_balance():
 def deposit_funds():
     global depositors_balance
 
-    print(f'Your account is ${depositors_balance:.2f}\n')
+    print(f'Your account is ${depositors_balance:.2f} Please make a deposit to continue\n')
     amount = float(input('Enter an amount to deposit: '))
     
     if amount > 0:
@@ -94,14 +94,16 @@ def deposit_funds():
 withdraw: float    
 def withdraw_funds():
     global depositors_balance
-    withdraw = float(input('Enter withdrawal amount: '))
-    
-    if withdraw > depositors_balance:
+    withdraw = float(input('Enter withdrawal amount: ')) 
+    if depositors_balance == 0:
+        deposit_funds()   
+    elif withdraw > depositors_balance:
         print('Insufficient Balance')
         withdraw_funds()
     elif withdraw <= 0:
         print('Enter a non-negative amout to withdraw') 
         withdraw_funds()  
+          
     else:
         print('Enter your pin to proceed')
         authenticate_user(user_pin)
