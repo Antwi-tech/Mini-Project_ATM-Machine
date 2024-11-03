@@ -7,12 +7,10 @@ def save_pin():
         pin = input('Add a 4-digit pin: ')
 
         if pin.isdigit() and len(pin) == 4:
-            print('Pin saved successfully')
+            print('Pin saved successfully.\n')
             break
         else:
-            print('Please enter a 4-digit pin.')
-            
-save_pin()
+            print('Please enter a 4-digit pin.\n')
 
 
 # Function to change user pin
@@ -55,8 +53,6 @@ def authenticate_user(user_pin):
 
         if user_pin == pin:
             print('Authentication successful!')
-            print('Main Menu function goes here!')
-
             break
         else:
             attempts += 1
@@ -66,7 +62,6 @@ def authenticate_user(user_pin):
             print('Too many incorrect attempts. Access blocked.')
             exit()
 
-authenticate_user(user_pin)
 
 
 # Main Menu Function
@@ -84,22 +79,29 @@ def main_menu():
         user_choice = input('Enter number associated with choice: ')
 
         if user_choice == '1':
-            print('Check balance function goes here!')
+            print('Enter your pin to proceed.')
+            check_balance()
         elif user_choice == '2':
-            print('Deposit Funds function goes here!')
+            deposit_funds()
         elif user_choice == '3':
-            print('Withdraw Funds function goes here!')
+            withdraw_funds()
         elif user_choice == '4':
             change_pin()
         elif user_choice == '5':
-            print('Exiting main menu')
+            print('Exiting main menu\n'
+                  'Thank you for visiting Rholant ATM Services.\n'
+                  'We hope you come next time.'
+            )
             break
         else:
             print('Invalid choice!')
 
-main_menu()
 
 
 # Main Application simulation
 def main():
-    pass
+    print('Welcome to RholAnt Bank ATM Services.\nAdd a pin to proceed') 
+    save_pin()
+    print('Enter your new pin to proceed to the main menu.')
+    authenticate_user(user_pin)
+    main_menu()
