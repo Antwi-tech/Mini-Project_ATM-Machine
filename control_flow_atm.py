@@ -1,3 +1,4 @@
+#Set user balance to 0 at the begining
 depositors_balance = 0
 
 #Function to check Balance
