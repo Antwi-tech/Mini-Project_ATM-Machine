@@ -148,3 +148,4 @@ def main():
     print('Enter your new pin to proceed to the main menu.')
     authenticate_user(user_pin)
     main_menu()
+main()
