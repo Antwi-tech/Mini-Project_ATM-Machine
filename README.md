@@ -63,6 +63,11 @@ Objectives:
 * Exit 
   - Users can safely exit the system , with a message to thank them for using Rholant ATM services.  
 
+## Improvements   
+* Error Handling
+* Persistent Account History 
+  -This is to enable users return to their user account with a saved history.Example: file based storage and database integration
+*     
   
 
 ## Tech Stack
