@@ -17,6 +17,10 @@ This repository contains a command-line ATM Machine Simulator built with Python,
 The project is structured to help us understand essential programming 
 concepts such as control flow, functions, loops and user authentication.
 
+## How It Works 
+
+[![Atm Stimulator Video](./ATM-stimulator-video.mp4)]
+
 
 
 ## How to Use This Repository
