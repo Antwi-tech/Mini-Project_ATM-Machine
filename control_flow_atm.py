@@ -42,7 +42,7 @@ def change_pin():
 
 # User authentication function
 user_pin = ''
-def authenticate_user(user_pin):
+def authenticate_user():
     max_attempts = 3
     attempts = 0
     
@@ -50,15 +50,15 @@ def authenticate_user(user_pin):
         user_pin = input('Enter your pin: ')
 
         if user_pin == pin:
-            print('Authentication successful!')
-            break
+            print('Authentication successful!\n')
+            return True
         else:
             attempts += 1
             print('Incorrect pin. Try again')
 
         if attempts == max_attempts:
             print('Too many incorrect attempts. Access blocked.')
-            exit()
+            return False
 
 
             
@@ -68,7 +68,7 @@ depositors_balance = 0
 #Function to check Balance  
 def check_balance():
     global depositors_balance
-    authenticate_user(user_pin)
+    authenticate_user()
     print(f"Current Balance: ${depositors_balance:.2f}\n")
 
 #Deposit funds function
@@ -80,7 +80,7 @@ def deposit_funds():
     
     if amount > 0:
         print('Enter your pin to proceed')
-        authenticate_user(user_pin)
+        authenticate_user()
         depositors_balance += amount
         print(f'Successfully deposited ${amount:.2f}\nCrrent Balance: ${depositors_balance:.2f}\n')  
     else:
@@ -101,7 +101,7 @@ def withdraw_funds():
         withdraw_funds()  
     else:
         print('Enter your pin to proceed')
-        authenticate_user(user_pin)
+        authenticate_user()
         depositors_balance -= withdraw
         print(f'An amount of ${withdraw:.2f} withdrawn successfullly\nCurrent balace is: ${depositors_balance:.2f}')  
         
@@ -131,7 +131,7 @@ def main_menu():
         elif user_choice == '4':
             change_pin()
         elif user_choice == '5':
-            print('Exiting main menu\n'
+            print('Exiting main menu....\n'
                   'Thank you for visiting Rholant ATM Services.\n'
                   'We hope you come next time.'
             )
@@ -146,6 +146,6 @@ def main():
     print('Welcome to RholAnt Bank ATM Services.\nAdd a pin to proceed') 
     save_pin()
     print('Enter your new pin to proceed to the main menu.')
-    authenticate_user(user_pin)
+    authenticate_user()
     main_menu()
 main()
