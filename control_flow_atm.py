@@ -65,7 +65,7 @@ def authenticate_user(user_pin):
 
 
             
-#Set user balance to 0 at the begining
+#Set user balance to 0 at the beginning
 depositors_balance = 0
 
 #Function to check Balance  
@@ -85,7 +85,7 @@ def deposit_funds():
         print('Enter your pin to proceed')
         authenticate_user(user_pin)
         depositors_balance += amount
-        print(f'Successfully deposited ${amount:.2f}\nCrrent Balance: ${depositors_balance:.2f}\n')  
+        print(f'Successfully deposited ${amount:.2f}\nCurrent Balance: ${depositors_balance:.2f}\n')  
     else:
         print('Enter a non-negative amount to deposit') 
 
@@ -108,7 +108,7 @@ def withdraw_funds():
         print('Enter your pin to proceed')
         authenticate_user(user_pin)
         depositors_balance -= withdraw
-        print(f'An amount of ${withdraw:.2f} withdrawn successfullly\nCurrent balace is: ${depositors_balance:.2f}\n')  
+        print(f'An amount of ${withdraw:.2f} withdrawn successfully\nCurrent balance is: ${depositors_balance:.2f}\n')  
         
         
         
