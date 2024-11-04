@@ -3,13 +3,16 @@
 def save_pin():
     global pin
     while True:
-        pin = input('Add a 4-digit pin: ')
+        try:
+            pin = int(input('Add a 4-digit pin: '))
 
-        if pin.isdigit() and len(pin) == 4:
-            print('Pin saved successfully.\n')
-            break
-        else:
-            print('Please enter a 4-digit pin.\n')
+            if len(str(pin)) == 4:
+                print('Pin saved successfully.\n')
+                break
+            else:
+                print('Please enter a 4-digit pin.\n')
+        except ValueError as e:
+            print(f'{e}\nEnter a numeric value instead')
 
 
 # Function to change user pin
