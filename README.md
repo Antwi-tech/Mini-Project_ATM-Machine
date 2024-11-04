@@ -19,7 +19,6 @@ concepts such as control flow, functions, loops and user authentication.
 
 ## How It Works 
 
-[![Atm Stimulator Video](./ATM-stimulator-video.mp4)]
 
 
 
