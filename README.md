@@ -61,7 +61,9 @@ Objectives:
 * Change PIN: 
   - Provides a secure way for users to change their PIN for added security.
 * Exit 
-  - Users can safely exit the system , with a message to thank them for using Rholant ATM services.  
+  - Users can safely exit the system , with a message to thank them for using Rholant ATM services. 
+* Error Handling
+  - Checks balance before withdrawal and if deposit amount is positive.  
 
 ## Improvements   
 * Error Handling
