@@ -17,22 +17,23 @@ This repository contains a command-line ATM Machine Simulator built with Python,
 The project is structured to help us understand essential programming 
 concepts such as control flow, functions, loops and user authentication.
 
+# How It Works
 
-
+[![ATM Stimulator Video](./thumbnail.png)](https://github.com/user-attachments/assets/2a93d557-a0ac-4e83-b303-a9b62730b3ab)
 ## How to Use This Repository
-* Clone the repository to your local machine.
+
 ```bash
+  #Clone the repository to your local machine.
   git clone https://github.com/rhoda-lee/Mini-Project_ATM-Machine.git
+
+  #Navigate to the directory where you cloned it.
+  cd Mini-Project_ATM-Machine 
+
+  #Run the provided Python scripts in your terminal.
+   python3 control_flow_atm.py
+
+  #Follow the prompts in each script to interact with the programs.
 ```
-* Navigate to the directory where you cloned it.
-```bash
-  cd Mini-Project_ATM-Machine
-```
-* Run the provided Python scripts in your terminal.
-```bash
-  python3 control_flow_atm.py
-  ```
-* Follow the prompts in each script to interact with the programs.
 
 
 ## Project Structure
@@ -48,6 +49,10 @@ Objectives:
 ## Features
 * User Authentication: 
   - Secure login with PIN verification, allowing only three attempts before blocking access.
+* Pin Validation:
+  - This ensures that the pin entered is numeric and it a 4-digit number  
+* Main Menu:
+  - The program provides a clear main menu to check balance, deposit ,withdraw, change pin or exit.  
 * Balance Checking: 
   - Displays the user’s current account balance.
 * Deposit Funds: 
@@ -56,6 +61,16 @@ Objectives:
   - Enables the user to withdraw funds, ensuring sufficient balance.
 * Change PIN: 
   - Provides a secure way for users to change their PIN for added security.
+* Exit 
+  - Users can safely exit the system, with a message to thank them for using Rholant ATM services.  
+
+## Improvements   
+* Persistent Account History 
+  - This is to enable users return to their user account with a saved history.Example: file based storage and database integration
+
+* Error Handling:
+  - Effectively handling non-numeric entry of values that could raise a ValueError    
+  
 
 ## Tech Stack
 * Python

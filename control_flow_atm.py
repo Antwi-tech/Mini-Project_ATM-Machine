@@ -49,6 +49,7 @@ def change_pin():
 
 
 
+
 # User authentication function
 user_pin = ''
 def authenticate_user():
@@ -58,7 +59,7 @@ def authenticate_user():
     while attempts < max_attempts:
         try:
             user_pin = int(input('Enter your pin: '))
-
+            
             if user_pin == pin:
                 print('Authentication successful!\n')
                 return True
@@ -69,12 +70,13 @@ def authenticate_user():
             if attempts == max_attempts:
                 print('Too many incorrect attempts. Access blocked.')
                 return False
+          
         except ValueError as e:
             print(f'{e}\nEnter a numeric value instead\n')
 
 
             
-#Set user balance to 0 at the begining
+#Set user balance to 0 at the beginning
 depositors_balance = 0
 
 #Function to check Balance  
@@ -86,7 +88,6 @@ def check_balance():
 #Deposit funds function
 def deposit_funds():
     global depositors_balance
-
     print(f'Your account is ${depositors_balance:.2f}\n')
 
     while True:
@@ -118,19 +119,21 @@ def deposit_funds():
 withdraw: float
 def withdraw_funds():
     global depositors_balance
-    withdraw = float(input('Enter withdrawal amount: '))
-    
-    if withdraw > depositors_balance:
+    withdraw = float(input('Enter withdrawal amount: ')) 
+    if depositors_balance == 0:
+        deposit_funds()   
+    elif withdraw > depositors_balance:
         print('Insufficient Balance')
         withdraw_funds()
     elif withdraw <= 0:
         print('Enter a non-negative amount to withdraw') 
         withdraw_funds()  
+          
     else:
         print('Enter your pin to proceed')
         authenticate_user()
         depositors_balance -= withdraw
-        print(f'An amount of ${withdraw:.2f} withdrawn successfullly\nCurrent balace is: ${depositors_balance:.2f}')  
+        print(f'An amount of ${withdraw:.2f} withdrawn successfully\nCurrent balance is: ${depositors_balance:.2f}\n')  
         
         
         
@@ -175,4 +178,6 @@ def main():
     print('Enter your new pin to proceed to the main menu.')
     authenticate_user()
     main_menu()
+    
 main()
+
