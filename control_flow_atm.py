@@ -119,21 +119,41 @@ def deposit_funds():
 withdraw: float
 def withdraw_funds():
     global depositors_balance
-    withdraw = float(input('Enter withdrawal amount: ')) 
+    
     if depositors_balance == 0:
-        deposit_funds()   
-    elif withdraw > depositors_balance:
-        print('Insufficient Balance')
+        print(f'Your balance is ${depositors_balance:.2f}\nDeposit funds first.\n')
+        deposit_funds()
         withdraw_funds()
-    elif withdraw <= 0:
-        print('Enter a non-negative amount to withdraw') 
-        withdraw_funds()  
-          
-    else:
-        print('Enter your pin to proceed')
-        authenticate_user()
-        depositors_balance -= withdraw
-        print(f'An amount of ${withdraw:.2f} withdrawn successfully\nCurrent balance is: ${depositors_balance:.2f}\n')  
+        return
+    
+    while True:
+        try:
+            withdraw = float(input('Enter withdrawal amount: ')) 
+
+            if withdraw < 0:
+                print('Enter a non-negative amount to withdraw') 
+                #withdraw_funds()
+                continue
+            elif withdraw == 0:
+                print('Enter an amount greater than zero(0)')
+                continue
+
+            if withdraw > depositors_balance:
+                print('Insufficient Balance.')
+                #withdraw_funds()
+                continue
+             
+            print('Enter your pin to proceed')
+            if authenticate_user():
+                depositors_balance -= withdraw
+                print(f'An amount of ${withdraw:.2f} withdrawn successfully\n'
+                      f'Current balance is: ${depositors_balance:.2f}\n')  
+                break
+            else:
+                print('Authentication process failed. Withdrawal aborted.\n')
+                break
+        except ValueError as e:
+            print(f'{e}\nEnter a numeric amount instead.\n')
         
         
         
