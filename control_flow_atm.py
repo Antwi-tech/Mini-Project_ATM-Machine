@@ -50,18 +50,21 @@ def authenticate_user():
     attempts = 0
     
     while attempts < max_attempts:
-        user_pin = input('Enter your pin: ')
+        try:
+            user_pin = int(input('Enter your pin: '))
 
-        if user_pin == pin:
-            print('Authentication successful!\n')
-            return True
-        else:
-            attempts += 1
-            print('Incorrect pin. Try again')
+            if user_pin == pin:
+                print('Authentication successful!\n')
+                return True
+            else:
+                attempts += 1
+                print('Incorrect pin. Try again')
 
-        if attempts == max_attempts:
-            print('Too many incorrect attempts. Access blocked.')
-            return False
+            if attempts == max_attempts:
+                print('Too many incorrect attempts. Access blocked.')
+                return False
+        except ValueError as e:
+            print(f'{e}\nEnter a numeric value instead')
 
 
             
