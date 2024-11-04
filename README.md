@@ -66,10 +66,11 @@ Objectives:
   - Checks balance before withdrawal and if deposit amount is positive.  
 
 ## Improvements   
-* Error Handling
 * Persistent Account History 
-  -This is to enable users return to their user account with a saved history.Example: file based storage and database integration
-*     
+ - This is to enable users return to their user account with a saved history.Example: file based storage and database integration
+
+* Error Handling:
+  - Effectively handling non-numeric entry of values that could raise a ValueError    
   
 
 ## Tech Stack
