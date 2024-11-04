@@ -1,5 +1,4 @@
 # Function to save user pin
-#global pin
 def save_pin():
     global pin
     while True:
@@ -12,34 +11,41 @@ def save_pin():
             else:
                 print('Please enter a 4-digit pin.\n')
         except ValueError as e:
-            print(f'{e}\nEnter a numeric value instead')
+            print(f'{e}\nEnter a numeric value instead\n')
 
 
 # Function to change user pin
 def change_pin():
     while True:
-        user_pin = input('Enter your current pin: ')
+        try:
+            user_pin = int(input('Enter your current pin: '))
 
-        global pin
+            global pin
+            while True:
+                if user_pin == pin:
+                    print('You are about to change your PIN')
+                    break
+                else:
+                    print('Wrong PIN')
+                    user_pin = int(input('Enter your current pin: '))
+            
+            while True:
+                new_pin = int(input('Enter a new 4-digit pin: '))
+                confirm_pin = int(input('Enter new PIN again: '))
 
-        if user_pin == pin:
-            print('You are about to change your PIN')
-        else:
-            print('Wrong PIN')
-        
-        new_pin = input('Enter a new 4-digit pin: ')
-        confirm_pin = input('Enter new PIN again: ')
+                if confirm_pin == new_pin:
 
-        if confirm_pin == new_pin:
-
-            if new_pin.isdigit() and len(new_pin) == 4:
-                pin = new_pin
-                print('Pin updated successfully!')
-                break
-            else:
-                print('Please enter a 4-digit pin.')
-        else:
-            print('This does not match up with the PIN you just entered')
+                    if len(str(new_pin)) == 4:
+                        pin = new_pin
+                        print('Pin updated successfully!\n')
+                        break
+                    else:
+                        print('Please enter a 4-digit pin.')
+                else:
+                    print('This does not match up with the PIN you just entered')
+            break
+        except ValueError as e:
+            print(f'{e}\nEnter a numeric value instead\n')
 
 
 
@@ -64,7 +70,7 @@ def authenticate_user():
                 print('Too many incorrect attempts. Access blocked.')
                 return False
         except ValueError as e:
-            print(f'{e}\nEnter a numeric value instead')
+            print(f'{e}\nEnter a numeric value instead\n')
 
 
             
