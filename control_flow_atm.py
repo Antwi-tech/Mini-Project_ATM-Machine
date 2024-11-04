@@ -88,15 +88,25 @@ def deposit_funds():
     global depositors_balance
 
     print(f'Your account is ${depositors_balance:.2f}\n')
-    amount = float(input('Enter an amount to deposit: '))
-    
-    if amount > 0:
-        print('Enter your pin to proceed')
-        authenticate_user()
-        depositors_balance += amount
-        print(f'Successfully deposited ${amount:.2f}\nCrrent Balance: ${depositors_balance:.2f}\n')  
-    else:
-        print('Enter a non-negative amount to deposit') 
+
+    while True:
+        amount = float(input('Enter an amount to deposit: '))
+        
+        if amount > 0:
+            print('Enter your pin to proceed')
+            authenticate_user()
+
+            if authenticate_user():
+
+                depositors_balance += amount
+                print(f'Successfully deposited ${amount:.2f}\nCrrent Balance: ${depositors_balance:.2f}\n')
+                break
+            else:
+                print('User authentication failed. Deposit process aborted.\n')
+                break
+
+        else:
+            print('Enter a non-negative amount to deposit\n') 
 
 
 #Withdraw funds function
