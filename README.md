@@ -48,6 +48,10 @@ Objectives:
 ## Features
 * User Authentication: 
   - Secure login with PIN verification, allowing only three attempts before blocking access.
+* Pin Validation:
+  - This ensures that the pin entered is numeric and it a 4-digit number  
+* Main Menu:
+  - The program provides a clear main menu to check balance, deposit ,withdraw, change pin or exit.  
 * Balance Checking: 
   - Displays the user’s current account balance.
 * Deposit Funds: 
@@ -56,6 +60,10 @@ Objectives:
   - Enables the user to withdraw funds, ensuring sufficient balance.
 * Change PIN: 
   - Provides a secure way for users to change their PIN for added security.
+* Exit 
+  - Users can safely exit the system , with a message to thank them for using Rholant ATM services.  
+
+  
 
 ## Tech Stack
 * Python
