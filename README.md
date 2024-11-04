@@ -17,11 +17,6 @@ This repository contains a command-line ATM Machine Simulator built with Python,
 The project is structured to help us understand essential programming 
 concepts such as control flow, functions, loops and user authentication.
 
-## How It Works 
-
-
-
-
 ## How to Use This Repository
 
 ```bash
@@ -36,9 +31,6 @@ concepts such as control flow, functions, loops and user authentication.
 
   #Follow the prompts in each script to interact with the programs.
 ```
-
-
-
 
 ## Project Structure
 The project contains the following files and directories:
@@ -66,9 +58,7 @@ Objectives:
 * Change PIN: 
   - Provides a secure way for users to change their PIN for added security.
 * Exit 
-  - Users can safely exit the system , with a message to thank them for using Rholant ATM services. 
-* Error Handling
-  - Checks balance before withdrawal and if deposit amount is positive.  
+  - Users can safely exit the system, with a message to thank them for using Rholant ATM services.  
 
 ## Improvements   
 * Persistent Account History 
