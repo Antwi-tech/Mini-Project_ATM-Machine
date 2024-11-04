@@ -66,10 +66,7 @@ Objectives:
 
 ## Improvements   
 * Persistent Account History 
-  - This is to enable users return to their user account with a saved history.Example: file based storage and database integration
-
-* Error Handling:
-  - Effectively handling non-numeric entry of values that could raise a ValueError    
+  - This is to enable users return to their user account with a saved history.Example: file based storage and database integration    
   
 
 ## Tech Stack
