@@ -62,10 +62,11 @@ def authenticate_user():
             if user_pin == pin:
                 print('Authentication successful!\n')
                 return True
+                #break
             else:
                 attempts += 1
                 print('Incorrect pin. Try again')
-
+    
             if attempts == max_attempts:
                 print('Too many incorrect attempts. Access blocked.')
                 return False
@@ -90,27 +91,32 @@ def deposit_funds():
     print(f'Your account is ${depositors_balance:.2f}\n')
 
     while True:
-        amount = float(input('Enter an amount to deposit: '))
-        
-        if amount > 0:
-            print('Enter your pin to proceed')
-            authenticate_user()
+        try:
+            amount = float(input('Enter an amount to deposit: '))
+            
+            if amount > 0:
+                print('Enter your pin to proceed')
 
-            if authenticate_user():
+                if authenticate_user():
 
-                depositors_balance += amount
-                print(f'Successfully deposited ${amount:.2f}\nCrrent Balance: ${depositors_balance:.2f}\n')
-                break
+                    depositors_balance += amount
+                    print(f'Successfully deposited ${amount:.2f}\nCrrent Balance: ${depositors_balance:.2f}\n')
+                    break
+                else:
+                    print('User authentication failed. Deposit process aborted.\n')
+                    break
+
+            elif amount == 0:
+                print('Enter an amount greater than zero(0).\n')
             else:
-                print('User authentication failed. Deposit process aborted.\n')
-                break
+                print('Enter a non-negative amount to deposit\n')
+        except ValueError as e:
+            print(f'{e}\nEnter a numeric value instead.\n')
 
-        else:
-            print('Enter a non-negative amount to deposit\n') 
 
 
 #Withdraw funds function
-withdraw: float    
+withdraw: float
 def withdraw_funds():
     global depositors_balance
     withdraw = float(input('Enter withdrawal amount: '))
