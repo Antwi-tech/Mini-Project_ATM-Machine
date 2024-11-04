@@ -32,6 +32,7 @@ concepts such as control flow, functions, loops and user authentication.
   #Follow the prompts in each script to interact with the programs.
 ```
 
+
 ## Project Structure
 The project contains the following files and directories:
 
