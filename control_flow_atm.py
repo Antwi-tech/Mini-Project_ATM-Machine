@@ -62,7 +62,6 @@ def authenticate_user():
             if user_pin == pin:
                 print('Authentication successful!\n')
                 return True
-                #break
             else:
                 attempts += 1
                 print('Incorrect pin. Try again')
@@ -125,7 +124,7 @@ def withdraw_funds():
         print('Insufficient Balance')
         withdraw_funds()
     elif withdraw <= 0:
-        print('Enter a non-negative amout to withdraw') 
+        print('Enter a non-negative amount to withdraw') 
         withdraw_funds()  
     else:
         print('Enter your pin to proceed')
