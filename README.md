@@ -17,6 +17,9 @@ This repository contains a command-line ATM Machine Simulator built with Python,
 The project is structured to help us understand essential programming 
 concepts such as control flow, functions, loops and user authentication.
 
+# How It Work
+[![ATM Stimulator Video](./thumbnail.png)(https://github.com/user-attachments/assets/2a93d557-a0ac-4e83-b303-a9b62730b3ab)]
+
 ## How to Use This Repository
 
 ```bash
@@ -31,6 +34,7 @@ concepts such as control flow, functions, loops and user authentication.
 
   #Follow the prompts in each script to interact with the programs.
 ```
+
 
 ## Project Structure
 The project contains the following files and directories:
