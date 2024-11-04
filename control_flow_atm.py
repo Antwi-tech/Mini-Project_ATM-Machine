@@ -69,7 +69,7 @@ def authenticate_user():
     
             if attempts == max_attempts:
                 print('Too many incorrect attempts. Access blocked.')
-                return False
+                exit()
           
         except ValueError as e:
             print(f'{e}\nEnter a numeric value instead\n')
