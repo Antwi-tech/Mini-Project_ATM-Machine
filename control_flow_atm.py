@@ -9,7 +9,7 @@ def main_menu():
         'Main Menu Options:\n'
         '1. Check Balance\n'
         '2. Deposit Funds\n'
-        '3. Withdraw Funds\n'
+        '3. Withdraw Funds\n'+
         '4. Change PIN\n'
         '5. Exit'
     )
@@ -29,6 +29,7 @@ def main_menu():
                   'Thank you for visiting Rholant ATM Services.\n'
                   'We hope you come next time.'
             )
+            break
         else:
             print('\nInvalid choice!')
             print('\nEnter a number 1-5!')
